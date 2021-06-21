@@ -6,7 +6,7 @@ $id = $_GET["id"];
 if(!$id){
     echo("아이디를 입력해 주세요!");
 }else{
-    $con = mysqli_connect("localhost", "user1", "123456", "uiux");
+    $con = mysqli_connect("localhost", "user1", "12345", "sample");
 
     $sql = "select * from member where id='$id'";
     $result = mysqli_query($con, $sql);

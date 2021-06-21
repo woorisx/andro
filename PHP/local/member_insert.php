@@ -9,7 +9,7 @@
     $email = $email1."@".$email2;
     $regist_day = date("Y-m-d (H:i)");
 
-    $con = mysqli_connect("localhost", "user1", "123456", "uiux");
+    $con = mysqli_connect("localhost", "user1", "12345", "sample");
     $sql = "insert into member(id, pass, name, email, regist_day, level, point)";
     $sql .= "values('$id', '$pass', '$name', '$email', '$regist_day', 0, 0)" ;
 
@@ -20,7 +20,7 @@
     echo "
     
         <script>
-            location.href = 'index.html';
+            location.href = 'index.php';
         </script>
     
     ";

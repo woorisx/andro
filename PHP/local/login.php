@@ -3,7 +3,7 @@
     $id = $_POST["id"];
     $pass = $_POST["pass"];
 
-    $con = mysqli_connect("localhost", "user1", "123456", "uiux");
+    $con = mysqli_connect("localhost", "user1", "12345", "sample");
     $sql ="select * from member where id='$id'";
     $result = mysqli_query($con, $sql);
 
@@ -33,9 +33,14 @@
             ");
             exit;
         }else{
+            session_start();
+            $_SESSION["userid"]        = $row["id"];
+            $_SESSION["username"]       = $row["name"];
+            $_SESSION["userlevel"]      = $row["level"];
+            $_SESSION["userpoint"]      = $row["point"];
             echo("
                 <script>
-                location.href = 'index.html';
+                location.href = 'index.php';
                 </script>
             ");
         }
